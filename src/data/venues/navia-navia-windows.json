@@ -7,7 +7,7 @@
     "from": "2026-08-14T07:00:00.000Z",
     "to": "2026-10-13T10:00:00.000Z"
   },
-  "cachedAt": "2026-10-11T03:32:25.323Z",
+  "cachedAt": "2026-10-11T03:47:17.013Z",
   "sessions": [
     {
       "id": "navia-1-2026-08-14T07:00:00.000Z",
@@ -19199,10 +19199,10 @@
       "capacitySource": "derived-grid",
       "confidence": "medium",
       "supersededSold": {
-        "ticketsSold": 17,
+        "ticketsSold": 19,
         "source": "slot-feed",
         "reason": "cancelled-after-reading",
-        "note": "We recorded 17 before the sitting started and Navia now has 16. Treated as bookings cancelled after our reading. Navia's figure is used, decided 2026-09-13. Our count is kept here so that can be revisited.",
+        "note": "We recorded 19 before the sitting started and Navia now has 16. Treated as bookings cancelled after our reading. Navia's figure is used, decided 2026-09-13. Our count is kept here so that can be revisited.",
         "decidedOn": "2026-09-13"
       }
     },
