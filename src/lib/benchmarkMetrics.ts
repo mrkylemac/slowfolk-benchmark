@@ -2,6 +2,37 @@ import { parseISO, differenceInDays } from 'date-fns';
 import type { MomenceSession } from '@/types/momence';
 import { formatDecimalHour } from '@/lib/utils';
 
+// Cache Intl.DateTimeFormat instances by timezone to avoid costly constructor calls on every session iteration
+// Constructing Intl.DateTimeFormat is ~30-50x slower than calling format/formatToParts on an existing instance.
+const timeFormatters = new Map<string, Intl.DateTimeFormat>();
+const weekdayFormatters = new Map<string, Intl.DateTimeFormat>();
+
+function getTimeFormatter(timezone: string): Intl.DateTimeFormat {
+  let fmt = timeFormatters.get(timezone);
+  if (!fmt) {
+    fmt = new Intl.DateTimeFormat('en-AU', {
+      timeZone: timezone,
+      hour: 'numeric',
+      minute: 'numeric',
+      hour12: false,
+    });
+    timeFormatters.set(timezone, fmt);
+  }
+  return fmt;
+}
+
+function getWeekdayFormatter(timezone: string): Intl.DateTimeFormat {
+  let fmt = weekdayFormatters.get(timezone);
+  if (!fmt) {
+    fmt = new Intl.DateTimeFormat('en-AU', {
+      timeZone: timezone,
+      weekday: 'long',
+    });
+    weekdayFormatters.set(timezone, fmt);
+  }
+  return fmt;
+}
+
 /**
  * Convert an ISO timestamp to a decimal hour in the venue's local timezone.
  * Falls back to UTC if no timezone is provided or the Intl API fails.
@@ -12,12 +43,7 @@ function getLocalDecimalHour(isoString: string, timezone?: string): number {
     return date.getUTCHours() + date.getUTCMinutes() / 60;
   }
   try {
-    const parts = new Intl.DateTimeFormat('en-AU', {
-      timeZone: timezone,
-      hour: 'numeric',
-      minute: 'numeric',
-      hour12: false,
-    }).formatToParts(date);
+    const parts = getTimeFormatter(timezone).formatToParts(date);
     const hour = parseInt(parts.find(p => p.type === 'hour')?.value ?? '0', 10) % 24;
     const minute = parseInt(parts.find(p => p.type === 'minute')?.value ?? '0', 10);
     return hour + minute / 60;
@@ -26,6 +52,8 @@ function getLocalDecimalHour(isoString: string, timezone?: string): number {
   }
 }
 
+const DAYS_OF_WEEK = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
+
 /**
  * Return the day-of-week (0=Sunday … 6=Saturday) in the venue's local timezone.
  */
@@ -33,12 +61,8 @@ function getLocalDayOfWeek(isoString: string, timezone?: string): number {
   const date = new Date(isoString);
   if (!timezone) return date.getUTCDay();
   try {
-    const dayName = new Intl.DateTimeFormat('en-AU', {
-      timeZone: timezone,
-      weekday: 'long',
-    }).format(date);
-    const days = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
-    const idx = days.indexOf(dayName);
+    const dayName = getWeekdayFormatter(timezone).format(date);
+    const idx = DAYS_OF_WEEK.indexOf(dayName);
     return idx >= 0 ? idx : date.getUTCDay();
   } catch {
     return date.getUTCDay();
