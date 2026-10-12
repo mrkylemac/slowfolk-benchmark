@@ -4,7 +4,7 @@ import { isGoogleAuthEnabled } from '@/lib/auth';
 import { getCurrentUser } from '@/lib/auth-guard';
 import { LoginClient } from './login-client';
 
-export const metadata = { title: 'Sign in — Slow Folk' };
+export const metadata = { title: 'Sign in' };
 
 export default async function LoginPage() {
   const user = await getCurrentUser();

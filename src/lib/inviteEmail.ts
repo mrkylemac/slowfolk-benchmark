@@ -15,9 +15,9 @@ export function buildInviteEmail({ to, link, invitedBy, expiresAt }: InviteEmail
   const expires = expiresAt.toLocaleDateString('en-AU', { day: 'numeric', month: 'long', year: 'numeric' });
   return {
     to: [to],
-    subject: "You've been invited to the Slow Folk capacity tool",
+    subject: "You've been invited to the Slow Folk Benchmark",
     text: [
-      `${invitedBy?.trim() || 'Slow Folk'} has given you access to the Slow Folk capacity tool.`,
+      `${invitedBy?.trim() || 'Slow Folk'} has given you access to the Slow Folk Benchmark.`,
       '',
       'Create your account with this link and you will be let straight in:',
       link,

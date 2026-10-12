@@ -13,7 +13,7 @@
   "workers_dev": false,
 
   "vars": {
-    "GITHUB_REPO": "mrkylemac/capacity-research-tool",
+    "GITHUB_REPO": "mrkylemac/slowfolk-benchmark",
     "WORKFLOW_FILE": "poll-venues.yml",
     "GIT_REF": "main"
   },

@@ -51,7 +51,7 @@ export function HomeClient() {
       <div className="page-container">
 
         <div className="mb-8">
-          <h1 className="text-2xl font-bold tracking-tight">Capacity Reports</h1>
+          <h1 className="text-2xl font-bold tracking-tight">Slow Folk Benchmark</h1>
         </div>
 
         {/* Financial Tracker entry point */}

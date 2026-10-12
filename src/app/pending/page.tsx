@@ -4,7 +4,7 @@ import { getCurrentUser } from '@/lib/auth-guard';
 import { AuthShell } from '@/components/auth/AuthShell';
 import { SignOutButton } from '@/components/auth/SignOutButton';
 
-export const metadata = { title: 'Pending approval — Slow Folk' };
+export const metadata = { title: 'Pending approval' };
 
 interface PendingPageProps {
   searchParams: Promise<{ new?: string }>;

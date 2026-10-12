@@ -4,7 +4,7 @@ import { listUsers } from '@/lib/users';
 import { listOpenInvites } from '@/lib/invites';
 import { UsersClient, type UserRow, type InviteRow } from './users-client';
 
-export const metadata = { title: 'Users — Slow Folk' };
+export const metadata = { title: 'Users' };
 
 // Approval state changes constantly and must never be served stale.
 export const dynamic = 'force-dynamic';

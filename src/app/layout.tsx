@@ -5,6 +5,8 @@ import { Providers } from './providers';
 import { AppUserBar } from '@/components/auth/AppUserBar';
 
 export const metadata: Metadata = {
+  title: { default: 'Slow Folk Benchmark', template: '%s — Slow Folk Benchmark' },
+  applicationName: 'Slow Folk Benchmark',
   icons: { icon: '/favicon.svg', shortcut: '/favicon.svg' },
 };
 

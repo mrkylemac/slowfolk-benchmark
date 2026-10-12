@@ -52,7 +52,7 @@ Still in the Vercel dashboard, under Settings then Environment Variables:
 | Variable | Value |
 |----------|-------|
 | `BETTER_AUTH_SECRET` | A long random string. Generate one at any password generator, at least 32 characters. |
-| `BETTER_AUTH_URL` | The production URL of the app, for example `https://capacity-research-tool.vercel.app` |
+| `BETTER_AUTH_URL` | The production URL of the app, for example `https://capacity-reporter.vercel.app` |
 | `ADMIN_EMAILS` | Your email address |
 
 `BETTER_AUTH_SECRET` signs session cookies. Changing it later signs everyone

@@ -1,6 +1,6 @@
 # CLAUDE.md
 
-This file provides context for AI assistants working on the Slow Folk Sauna Capacity Benchmarking Tool.
+This file provides context for AI assistants working on Slow Folk Benchmark, the sauna capacity benchmarking tool.
 
 ## Project Overview
 

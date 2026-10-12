@@ -56,7 +56,7 @@ export function buildAccessRequestNotice(
     to,
     subject: `Access request: ${request.email}`,
     text: [
-      `${name} has requested access to the Slow Folk capacity tool.`,
+      `${name} has requested access to the Slow Folk Benchmark.`,
       '',
       `Name:  ${name}`,
       `Email: ${request.email}`,

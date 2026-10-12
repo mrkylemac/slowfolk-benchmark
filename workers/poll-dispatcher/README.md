@@ -29,7 +29,7 @@ venue and runs both deep refreshes, every 15 minutes.
 GitHub, Settings, Developer settings, Personal access tokens, **Fine grained
 tokens**, Generate new token.
 
-- **Repository access:** Only select repositories, `capacity-research-tool`
+- **Repository access:** Only select repositories, `slowfolk-benchmark`
 - **Permissions:** Repository permissions, **Actions: Read and write**. Nothing
   else. Metadata read access is added automatically.
 - **Expiration:** the longest your account allows. Put a reminder in the calendar

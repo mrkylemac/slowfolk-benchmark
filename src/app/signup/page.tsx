@@ -3,7 +3,7 @@ import { isGoogleAuthEnabled } from '@/lib/auth';
 import { getCurrentUser } from '@/lib/auth-guard';
 import { SignupClient } from './signup-client';
 
-export const metadata = { title: 'Request access — Slow Folk' };
+export const metadata = { title: 'Request access' };
 
 export default async function SignupPage({
   searchParams,
