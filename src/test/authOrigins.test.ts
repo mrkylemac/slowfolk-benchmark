@@ -1,4 +1,6 @@
-import { resolveBaseURL, resolveTrustedOrigins, toOrigin } from '@/lib/authOrigins';
+import { APP_DOMAINS, resolveBaseURL, resolveTrustedOrigins, toOrigin } from '@/lib/authOrigins';
+
+const APP_ORIGINS = APP_DOMAINS.map(domain => `https://${domain}`);
 
 describe('toOrigin', () => {
   it('adds https to a bare Vercel hostname', () => {
@@ -34,6 +36,20 @@ describe('resolveBaseURL', () => {
   it('returns undefined when neither is set', () => {
     expect(resolveBaseURL({} as NodeJS.ProcessEnv)).toBeUndefined();
   });
+
+  // Every domain answers with its own callbacks and cookies, so a new domain
+  // cannot sign anyone out of the one they were using.
+  it('follows the request host on Vercel, across every app domain', () => {
+    expect(resolveBaseURL({
+      VERCEL: '1',
+      BETTER_AUTH_URL: 'https://benchmark.slowfolk.au/',
+      VERCEL_URL: 'capacity-reporter-abc123-team.vercel.app',
+    } as NodeJS.ProcessEnv)).toEqual({
+      allowedHosts: ['benchmark.slowfolk.au', 'capacity-reporter.vercel.app', 'capacity-reporter-abc123-team.vercel.app'],
+      protocol: 'https',
+      fallback: 'https://benchmark.slowfolk.au',
+    });
+  });
 });
 
 describe('resolveTrustedOrigins', () => {
@@ -58,7 +74,7 @@ describe('resolveTrustedOrigins', () => {
     } as NodeJS.ProcessEnv);
 
     expect(origins).toEqual([
-      'https://capacity-reporter.vercel.app',
+      ...APP_ORIGINS,
       'https://capacity-reporter-git-main-team.vercel.app',
       'https://capacity-reporter-abc123-team.vercel.app',
     ]);
@@ -68,10 +84,10 @@ describe('resolveTrustedOrigins', () => {
     expect(resolveTrustedOrigins({
       BETTER_AUTH_URL: 'https://capacity-reporter.vercel.app/',
       VERCEL_PROJECT_PRODUCTION_URL: 'capacity-reporter.vercel.app',
-    } as NodeJS.ProcessEnv)).toEqual(['https://capacity-reporter.vercel.app']);
+    } as NodeJS.ProcessEnv)).toEqual(['https://capacity-reporter.vercel.app', 'https://benchmark.slowfolk.au']);
   });
 
-  it('is empty when nothing is configured, leaving the Better Auth default alone', () => {
-    expect(resolveTrustedOrigins({} as NodeJS.ProcessEnv)).toEqual([]);
+  it('always trusts the app domains', () => {
+    expect(resolveTrustedOrigins({} as NodeJS.ProcessEnv)).toEqual(APP_ORIGINS);
   });
 });

@@ -1,3 +1,5 @@
+import type { BetterAuthOptions } from 'better-auth';
+
 /**
  * Where the app is allowed to be reached from.
  *
@@ -9,8 +11,9 @@
  * preview opened on its own URL, both come back as "Invalid origin" with no
  * hint on the page about which host was refused.
  *
- * So the trusted list is built from the Vercel system variables as well, which
- * only ever name hostnames Vercel assigned to this project:
+ * So the trusted list is built from the app's own domains (`APP_DOMAINS`) and
+ * the Vercel system variables, which only ever name hostnames Vercel assigned
+ * to this project:
  *
  *   VERCEL_PROJECT_PRODUCTION_URL  the production domain
  *   VERCEL_BRANCH_URL              the per-branch host
@@ -18,6 +21,15 @@
  *
  * These are hostnames without a protocol, hence `toOrigin`.
  */
+
+/**
+ * The app's public domains. Each serves the whole app with its own sign-in:
+ * auth callbacks and session cookies stay on whichever host the visitor used,
+ * so adding a domain never signs anyone out of another. A Google sign-in on a
+ * new domain also needs its `/api/auth/callback/google` URL added to the OAuth
+ * client's authorised redirect URIs.
+ */
+export const APP_DOMAINS = ['benchmark.slowfolk.au', 'capacity-reporter.vercel.app'];
 
 /** `https://example.com/` and `example.com` both become `https://example.com`. */
 export function toOrigin(value: string | undefined): string | undefined {
@@ -32,11 +44,26 @@ export function toOrigin(value: string | undefined): string | undefined {
 /**
  * The public URL Better Auth builds its links from.
  *
+ * On Vercel the app answers on several hosts at once, so the URL is taken from
+ * each request's host, checked against the trusted list. A host outside it
+ * falls back to the fixed URL. `protocol: 'https'` keeps the `__Secure-` cookie
+ * names the app has always used, so existing sessions stay valid.
+ *
  * A trailing slash is trimmed rather than passed through: Better Auth compares
  * origins by exact string, so `https://example.com/` never matches a browser's
  * `https://example.com`.
  */
-export function resolveBaseURL(env: NodeJS.ProcessEnv = process.env): string | undefined {
+export function resolveBaseURL(env: NodeJS.ProcessEnv = process.env): BetterAuthOptions['baseURL'] {
+  const fixed = resolveFixedBaseURL(env);
+  if (!env.VERCEL) return fixed;
+  return {
+    allowedHosts: resolveTrustedOrigins(env).map(origin => new URL(origin).host),
+    protocol: 'https',
+    fallback: fixed,
+  };
+}
+
+function resolveFixedBaseURL(env: NodeJS.ProcessEnv): string | undefined {
   if (env.BETTER_AUTH_URL) return env.BETTER_AUTH_URL.replace(/\/+$/, '');
   // Vercel sets VERCEL_URL to the deployment host without a protocol.
   if (env.VERCEL_URL) return `https://${env.VERCEL_URL}`;
@@ -52,6 +79,7 @@ export function resolveBaseURL(env: NodeJS.ProcessEnv = process.env): string | u
 export function resolveTrustedOrigins(env: NodeJS.ProcessEnv = process.env): string[] {
   const candidates = [
     env.BETTER_AUTH_URL,
+    ...APP_DOMAINS,
     env.VERCEL_PROJECT_PRODUCTION_URL,
     env.VERCEL_BRANCH_URL,
     env.VERCEL_URL,

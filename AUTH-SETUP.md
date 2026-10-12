@@ -110,6 +110,21 @@ Google accounts go through the same approval queue. Signing in with Google links
 to an existing email and password account of the same address, since Google
 verifies email ownership.
 
+## Domains
+
+The app answers on every host in `APP_DOMAINS` (`src/lib/authOrigins.ts`):
+`benchmark.slowfolk.au` and `capacity-reporter.vercel.app`. Each keeps its own
+sign-in, so a session on one is unaffected by the other; accounts and approvals
+are shared because they live in the database. To add a domain:
+
+1. Add it to the Vercel project, without a redirect, and point DNS at it.
+2. Add it to `APP_DOMAINS`.
+3. Add `https://NEW-DOMAIN/api/auth/callback/google` to the Google OAuth
+   client's authorised redirect URIs.
+
+`BETTER_AUTH_URL` is the fallback for a host outside that list and the link in
+access-request emails.
+
 ## Local development
 
 Any local Postgres will do:
