@@ -21,6 +21,12 @@ const MONTH_NAMES = [
   'July', 'August', 'September', 'October', 'November', 'December',
 ] as const;
 
+// Fast O(1) lookup map for month indices to optimize sorting without string search or Date object allocation
+const MONTH_INDEX_MAP: Record<string, number> = {
+  January: 0, February: 1, March: 2, April: 3, May: 4, June: 5,
+  July: 6, August: 7, September: 8, October: 9, November: 10, December: 11,
+};
+
 function utcDecimalHour(iso: string): number {
   const d = new Date(iso);
   return d.getUTCHours() + d.getUTCMinutes() / 60;
@@ -57,11 +63,15 @@ export function calculateMetrics(sessions: MomenceSession[], fromDate: string, t
   const sessionsPerDay = daysDiff > 0 ? totalSessions / daysDiff : 0;
   const sessionsPerWeek = sessionsPerDay * 7;
 
-  const sortedSessions = [...sessions].sort((a, b) => 
-    new Date(a.startsAt).getTime() - new Date(b.startsAt).getTime()
-  );
-  const operatingSince = sortedSessions.length > 0 
-    ? format(parseISO(sortedSessions[0].startsAt), 'MMMM yyyy')
+  // Find earliest session timestamp in O(N) single pass without array sorting or Date allocations
+  let earliestStartsAt = sessions[0]?.startsAt;
+  for (let i = 1; i < sessions.length; i++) {
+    if (sessions[i].startsAt && (!earliestStartsAt || sessions[i].startsAt < earliestStartsAt)) {
+      earliestStartsAt = sessions[i].startsAt;
+    }
+  }
+  const operatingSince = earliestStartsAt
+    ? format(parseISO(earliestStartsAt), 'MMMM yyyy')
     : '-';
 
   return {
@@ -116,9 +126,10 @@ export function calculateMonthlyData(sessions: MomenceSession[]): MonthlyData[] 
     });
   });
 
+  // Sort monthly data using O(1) map lookups instead of O(N) array indexOf scans
   return monthlyData.sort((a, b) => {
     if (a.year !== b.year) return a.year - b.year;
-    return MONTH_NAMES.indexOf(a.month as (typeof MONTH_NAMES)[number]) - MONTH_NAMES.indexOf(b.month as (typeof MONTH_NAMES)[number]);
+    return (MONTH_INDEX_MAP[a.month] ?? 0) - (MONTH_INDEX_MAP[b.month] ?? 0);
   });
 }
 

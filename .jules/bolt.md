@@ -1,0 +1,3 @@
+## 2026-03-01 - ISO string comparison and static month map lookups
+**Learning:** ISO 8601 strings (`startsAt`) sort lexicographically in chronological order, allowing $O(N)$ single-pass searches for minimum/maximum timestamps without allocating array copies or instantiating `Date` objects in $O(N \log N)$ sort comparators. Month index lookups in sort comparators should use static map lookup records ($O(1)$) instead of string parsing with `new Date()` or linear array scans (`indexOf`).
+**Action:** When finding earliest/latest ISO dates in collections or sorting monthly data, avoid `new Date()` in sort comparators; use O(1) string comparisons and static lookup maps.
