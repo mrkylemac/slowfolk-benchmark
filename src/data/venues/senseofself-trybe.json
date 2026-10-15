@@ -7,7 +7,7 @@
     "from": "2026-03-04T14:30:00+11:00",
     "to": "2027-01-12T20:45:00+11:00"
   },
-  "cachedAt": "2026-10-15T10:47:16.170Z",
+  "cachedAt": "2026-10-15T11:01:58.214Z",
   "sessions": [
     {
       "id": "6900046a85652a9a670c2bbd",
@@ -106456,7 +106456,7 @@
       "endsAt": "2026-10-15T22:15:00+11:00",
       "durationMinutes": 120,
       "capacity": 2,
-      "ticketsSold": 2,
+      "ticketsSold": 0,
       "fixedTicketPrice": 65,
       "location": "Collingwood",
       "inPerson": true
@@ -106468,7 +106468,7 @@
       "endsAt": "2026-10-15T22:30:00+11:00",
       "durationMinutes": 120,
       "capacity": 4,
-      "ticketsSold": 4,
+      "ticketsSold": 0,
       "fixedTicketPrice": 65,
       "location": "Collingwood",
       "inPerson": true
@@ -106480,7 +106480,7 @@
       "endsAt": "2026-10-15T22:45:00+11:00",
       "durationMinutes": 120,
       "capacity": 4,
-      "ticketsSold": 4,
+      "ticketsSold": 0,
       "fixedTicketPrice": 65,
       "location": "Collingwood",
       "inPerson": true
