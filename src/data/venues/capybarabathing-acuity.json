@@ -5,9 +5,9 @@
   "venueName": "Capybara Bathing",
   "dateRange": {
     "from": "2026-09-26T00:45:00.000Z",
-    "to": "2026-10-20T07:45:00.000Z"
+    "to": "2026-10-20T06:30:00.000Z"
   },
-  "cachedAt": "2026-10-15T23:17:03.520Z",
+  "cachedAt": "2026-10-15T23:32:04.177Z",
   "sessions": [
     {
       "id": "acuity-57414776-9539301-2026-09-26T10:45:00+10:00",
@@ -5842,6 +5842,18 @@
       "inPerson": true
     },
     {
+      "id": "acuity-57411393-9539301-2026-10-16T11:45:00+11:00",
+      "sessionName": "Bathing (Off-Peak)",
+      "startsAt": "2026-10-16T00:45:00.000Z",
+      "endsAt": "2026-10-16T02:15:00.000Z",
+      "durationMinutes": 90,
+      "capacity": 5,
+      "ticketsSold": 0,
+      "fixedTicketPrice": 65,
+      "location": "",
+      "inPerson": true
+    },
+    {
       "id": "acuity-57411393-9539301-2026-10-16T12:30:00+11:00",
       "sessionName": "Bathing (Off-Peak)",
       "startsAt": "2026-10-16T01:30:00.000Z",
@@ -5873,6 +5885,18 @@
       "durationMinutes": 90,
       "capacity": 5,
       "ticketsSold": 4,
+      "fixedTicketPrice": 65,
+      "location": "",
+      "inPerson": true
+    },
+    {
+      "id": "acuity-57411393-9539301-2026-10-16T13:15:00+11:00",
+      "sessionName": "Bathing (Off-Peak)",
+      "startsAt": "2026-10-16T02:15:00.000Z",
+      "endsAt": "2026-10-16T03:45:00.000Z",
+      "durationMinutes": 90,
+      "capacity": 5,
+      "ticketsSold": 0,
       "fixedTicketPrice": 65,
       "location": "",
       "inPerson": true
@@ -5954,6 +5978,30 @@
       "sessionName": "Bathing (Peak)",
       "startsAt": "2026-10-16T06:45:00.000Z",
       "endsAt": "2026-10-16T08:15:00.000Z",
+      "durationMinutes": 90,
+      "capacity": 5,
+      "ticketsSold": 0,
+      "fixedTicketPrice": 70,
+      "location": "",
+      "inPerson": true
+    },
+    {
+      "id": "acuity-57414776-9539301-2026-10-16T18:00:00+11:00",
+      "sessionName": "Bathing (Peak)",
+      "startsAt": "2026-10-16T07:00:00.000Z",
+      "endsAt": "2026-10-16T08:30:00.000Z",
+      "durationMinutes": 90,
+      "capacity": 5,
+      "ticketsSold": 0,
+      "fixedTicketPrice": 70,
+      "location": "",
+      "inPerson": true
+    },
+    {
+      "id": "acuity-57414776-9539301-2026-10-16T18:15:00+11:00",
+      "sessionName": "Bathing (Peak)",
+      "startsAt": "2026-10-16T07:15:00.000Z",
+      "endsAt": "2026-10-16T08:45:00.000Z",
       "durationMinutes": 90,
       "capacity": 5,
       "ticketsSold": 0,
@@ -7178,42 +7226,6 @@
       "sessionName": "Bathing (Peak)",
       "startsAt": "2026-10-20T06:30:00.000Z",
       "endsAt": "2026-10-20T08:00:00.000Z",
-      "durationMinutes": 90,
-      "capacity": 5,
-      "ticketsSold": 0,
-      "fixedTicketPrice": 70,
-      "location": "",
-      "inPerson": true
-    },
-    {
-      "id": "acuity-57414776-9539301-2026-10-20T17:45:00+11:00",
-      "sessionName": "Bathing (Peak)",
-      "startsAt": "2026-10-20T06:45:00.000Z",
-      "endsAt": "2026-10-20T08:15:00.000Z",
-      "durationMinutes": 90,
-      "capacity": 5,
-      "ticketsSold": 0,
-      "fixedTicketPrice": 70,
-      "location": "",
-      "inPerson": true
-    },
-    {
-      "id": "acuity-57414776-9539301-2026-10-20T18:30:00+11:00",
-      "sessionName": "Bathing (Peak)",
-      "startsAt": "2026-10-20T07:30:00.000Z",
-      "endsAt": "2026-10-20T09:00:00.000Z",
-      "durationMinutes": 90,
-      "capacity": 5,
-      "ticketsSold": 0,
-      "fixedTicketPrice": 70,
-      "location": "",
-      "inPerson": true
-    },
-    {
-      "id": "acuity-57414776-9539301-2026-10-20T18:45:00+11:00",
-      "sessionName": "Bathing (Peak)",
-      "startsAt": "2026-10-20T07:45:00.000Z",
-      "endsAt": "2026-10-20T09:15:00.000Z",
       "durationMinutes": 90,
       "capacity": 5,
       "ticketsSold": 0,
