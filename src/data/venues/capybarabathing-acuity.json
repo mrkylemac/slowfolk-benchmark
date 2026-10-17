@@ -5,9 +5,9 @@
   "venueName": "Capybara Bathing",
   "dateRange": {
     "from": "2026-09-26T00:45:00.000Z",
-    "to": "2026-10-21T01:30:00.000Z"
+    "to": "2026-10-21T01:45:00.000Z"
   },
-  "cachedAt": "2026-10-17T01:46:45.628Z",
+  "cachedAt": "2026-10-17T02:01:38.079Z",
   "sessions": [
     {
       "id": "acuity-57414776-9539301-2026-09-26T10:45:00+10:00",
@@ -6928,7 +6928,7 @@
       "endsAt": "2026-10-19T04:30:00.000Z",
       "durationMinutes": 90,
       "capacity": 5,
-      "ticketsSold": 0,
+      "ticketsSold": 2,
       "fixedTicketPrice": 65,
       "location": "",
       "inPerson": true
@@ -7301,6 +7301,18 @@
       "durationMinutes": 90,
       "capacity": 5,
       "ticketsSold": 5,
+      "fixedTicketPrice": 65,
+      "location": "",
+      "inPerson": true
+    },
+    {
+      "id": "acuity-57411393-9539301-2026-10-21T12:45:00+11:00",
+      "sessionName": "Bathing (Off-Peak)",
+      "startsAt": "2026-10-21T01:45:00.000Z",
+      "endsAt": "2026-10-21T03:15:00.000Z",
+      "durationMinutes": 90,
+      "capacity": 5,
+      "ticketsSold": 4,
       "fixedTicketPrice": 65,
       "location": "",
       "inPerson": true
