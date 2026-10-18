@@ -7,7 +7,7 @@
     "from": "2026-08-14T07:00:00.000Z",
     "to": "2026-11-21T10:00:00.000Z"
   },
-  "cachedAt": "2026-10-18T02:47:16.420Z",
+  "cachedAt": "2026-10-18T03:02:26.000Z",
   "sessions": [
     {
       "id": "navia-1-2026-08-14T07:00:00.000Z",
@@ -57631,6 +57631,23 @@
       "confidence": "medium"
     },
     {
+      "id": "navia-2-2026-10-15T03:15:00.000Z",
+      "sessionName": "Bathing",
+      "startsAt": "2026-10-15T03:15:00.000Z",
+      "endsAt": "2026-10-15T04:15:00.000Z",
+      "durationMinutes": 60,
+      "capacity": 0,
+      "ticketsSold": 0,
+      "fixedTicketPrice": 0,
+      "location": "Prahran",
+      "inPerson": true,
+      "utilisationKnown": false,
+      "capacitySource": "unknown",
+      "soldSource": "unknown",
+      "measure": "seats",
+      "confidence": "low"
+    },
+    {
       "id": "navia-2-2026-10-15T04:00:00.000Z",
       "sessionName": "Bathing",
       "startsAt": "2026-10-15T04:00:00.000Z",
@@ -58413,7 +58430,7 @@
       "endsAt": "2026-10-18T05:00:00.000Z",
       "durationMinutes": 60,
       "capacity": 32,
-      "ticketsSold": 6,
+      "ticketsSold": 7,
       "fixedTicketPrice": 0,
       "location": "Prahran",
       "inPerson": true,
@@ -59160,22 +59177,6 @@
       "soldSource": "unknown",
       "measure": "seats",
       "confidence": "low"
-    },
-    {
-      "id": "navia-2-2026-10-21T03:00:00.000Z",
-      "sessionName": "Bathing",
-      "startsAt": "2026-10-21T03:00:00.000Z",
-      "endsAt": "2026-10-21T04:00:00.000Z",
-      "durationMinutes": 60,
-      "capacity": 32,
-      "ticketsSold": 0,
-      "fixedTicketPrice": 0,
-      "location": "Prahran",
-      "inPerson": true,
-      "capacitySource": "derived-grid",
-      "soldSource": "derived-grid",
-      "measure": "seats",
-      "confidence": "medium"
     },
     {
       "id": "navia-1-2026-10-21T04:00:00.000Z",
