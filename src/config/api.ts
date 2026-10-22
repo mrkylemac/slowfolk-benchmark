@@ -174,10 +174,9 @@ export const VENUES: VenueConfig[] = [
   // Host id read from the Momence lead-form embed on nativestate.com.au. Kirra is
   // on the Queensland side of the border, so no daylight saving.
   { id: '233027', name: 'Native State', platform: 'momence', location: 'Kirra, Gold Coast', timezone: 'Australia/Brisbane' },
-  // Hidden until it has trading data: it opens 2026-10-12, and the only past
-  // sessions are 18 zero-sold Monday test slots from July–August, which would
-  // read as 0% utilisation. markPreLaunchSessions drops those once a booked
-  // session has run, so unhiding a few weeks after opening shows a clean ramp.
+  // Opened 2026-10-12. Its earlier sessions are 18 zero-sold Monday test
+  // slots from July–August; markPreLaunchSessions drops those now that booked
+  // sessions have run, so the report starts at opening.
   //
   // Each 30-minute entry is its own Momence session with 6 places and a
   // 90-minute stay, so three entries overlap at any time. Utilisation per entry
@@ -186,7 +185,7 @@ export const VENUES: VenueConfig[] = [
   //
   // Prices are NZD and are summed as dollars in revenue figures, as KEEN's CHF
   // are. City not yet confirmed; Momence reports only the country.
-  { id: '284871', name: 'Sink Bathhouse', platform: 'momence', location: 'New Zealand', timezone: 'Pacific/Auckland', hidden: true },
+  { id: '284871', name: 'Sink Bathhouse', platform: 'momence', location: 'New Zealand', timezone: 'Pacific/Auckland' },
   { id: 'thecornersauna', name: 'The Corner Sauna', platform: 'acuity', location: 'Apollo Bay', timezone: 'Australia/Sydney' },
   {
     id: 'capybarabathing', name: 'Capybara Bathing', platform: 'acuity', location: 'Surry Hills', timezone: 'Australia/Sydney',
