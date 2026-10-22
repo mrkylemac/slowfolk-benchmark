@@ -1,0 +1,22 @@
+#!/bin/sh
+# Refuse to push a main that won't build. Vercel deploys every push to main,
+# and a failed build there is silent: production just stays on the last good
+# deploy (from 28 Sep to 23 Oct 2026 it sat on a build with conflict markers
+# in globals.css). Skip with `git push --no-verify` when you must.
+
+# Conflict markers anywhere outside the venue cache, indented or not: a
+# formatter had re-indented the ones above, which hid them from a plain ^<<<.
+if git grep -nE '^[[:space:]]*(<<<<<<<|>>>>>>>)|^[[:space:]]*=======([^=]|$)' -- ':!src/data' ':!*.md'; then
+  echo "pre-push: conflict markers found above; resolve them before pushing." >&2
+  exit 1
+fi
+
+echo "pre-push: running yarn build..." >&2
+if ! yarn -s build >/dev/null 2>"${TMPDIR:-/tmp}/slowfolk-prepush-build.log"; then
+  tail -40 "${TMPDIR:-/tmp}/slowfolk-prepush-build.log" >&2
+  echo "pre-push: build failed; full log in ${TMPDIR:-/tmp}/slowfolk-prepush-build.log" >&2
+  exit 1
+fi
+# next build rewrites these tracked files; don't leave it dirty after a push.
+git checkout -- tsconfig.tsbuildinfo next-env.d.ts 2>/dev/null
+echo "pre-push: build ok." >&2

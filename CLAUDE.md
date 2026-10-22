@@ -43,7 +43,7 @@ yarn refresh:glofox   # Refresh Glofox guest tokens
 yarn venue:schedule   # Derive polling windows from cached data (add a platform to filter)
 yarn verify:cache     # Refuse-to-publish check: has any cache lost history?
 yarn cache:sync       # Sync venue cache from origin/main (discards local cache edits)
-yarn cache:setup      # One-time per clone: register the venue-cache merge driver
+yarn cache:setup      # One-time per clone: venue-cache merge driver + pre-push build check
 yarn auth:generate    # Regenerate src/db/auth-schema.sql from src/lib/auth.ts
 yarn auth:migrate     # Apply schema changes to the live database
 ```
@@ -205,6 +205,11 @@ rule existed). Put local secrets in `.env.local` instead.
 ## Deployment
 
 Vercel, on push to `main`. No deploy workflow and no build config of its own.
+
+A failed Vercel build is silent: production stays on the last good deploy and
+every later push, the 15-minute data commits included, fails behind it. The
+`.githooks/pre-push` hook (enabled by `yarn cache:setup`) refuses a push that
+has conflict markers or fails `yarn build`.
 
 `src/data` reaches the serverless functions via `outputFileTracingIncludes` in
 `next.config.mjs`: the venue JSON is read at request time from `process.cwd()`
