@@ -110,14 +110,11 @@
   --secondary: var(--sf-base-20);
   --secondary-foreground: var(--sf-base-black);
   --muted: var(--sf-base-20);
-  <<<<<<< HEAD --muted-foreground: var(--sf-brown-60);
-  /* 2.71:1 on Bone: labels and captions, never a sentence */
-  --accent: var(--sf-bone-60);
-  =======--muted-foreground: var(--sf-brown-60);
+  --muted-foreground: var(--sf-brown-60);
   /* 2.71:1 on Bone: labels and captions, never a sentence */
   --accent: var(--sf-base-20);
   /* hover fill: cards, ghost buttons, menu items */
-  >>>>>>>59c3be8bfb35d4ae59396b4a920362023533e7ea --accent-foreground: var(--sf-base-black);
+  --accent-foreground: var(--sf-base-black);
   --destructive: var(--sf-brand-red);
   --destructive-foreground: var(--sf-bone);
   --border: var(--sf-base-40);
