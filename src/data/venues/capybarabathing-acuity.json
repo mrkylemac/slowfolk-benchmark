@@ -7,7 +7,7 @@
     "from": "2026-09-26T00:45:00.000Z",
     "to": "2026-10-27T07:30:00.000Z"
   },
-  "cachedAt": "2026-10-23T08:16:40.514Z",
+  "cachedAt": "2026-10-23T19:31:38.811Z",
   "sessions": [
     {
       "id": "acuity-57414776-9539301-2026-09-26T10:45:00+10:00",
@@ -8176,7 +8176,7 @@
       "endsAt": "2026-10-24T01:15:00.000Z",
       "durationMinutes": 90,
       "capacity": 5,
-      "ticketsSold": 0,
+      "ticketsSold": 2,
       "fixedTicketPrice": 70,
       "location": "",
       "inPerson": true
@@ -8404,7 +8404,7 @@
       "endsAt": "2026-10-24T07:45:00.000Z",
       "durationMinutes": 90,
       "capacity": 5,
-      "ticketsSold": 0,
+      "ticketsSold": 2,
       "fixedTicketPrice": 70,
       "location": "",
       "inPerson": true
@@ -8416,7 +8416,7 @@
       "endsAt": "2026-10-24T08:00:00.000Z",
       "durationMinutes": 90,
       "capacity": 5,
-      "ticketsSold": 2,
+      "ticketsSold": 4,
       "fixedTicketPrice": 70,
       "location": "",
       "inPerson": true
@@ -8476,7 +8476,7 @@
       "endsAt": "2026-10-24T09:30:00.000Z",
       "durationMinutes": 90,
       "capacity": 5,
-      "ticketsSold": 2,
+      "ticketsSold": 3,
       "fixedTicketPrice": 70,
       "location": "",
       "inPerson": true
@@ -8488,7 +8488,7 @@
       "endsAt": "2026-10-24T09:45:00.000Z",
       "durationMinutes": 90,
       "capacity": 5,
-      "ticketsSold": 0,
+      "ticketsSold": 1,
       "fixedTicketPrice": 70,
       "location": "",
       "inPerson": true
@@ -8572,7 +8572,7 @@
       "endsAt": "2026-10-25T01:30:00.000Z",
       "durationMinutes": 90,
       "capacity": 5,
-      "ticketsSold": 2,
+      "ticketsSold": 4,
       "fixedTicketPrice": 70,
       "location": "",
       "inPerson": true
@@ -8896,7 +8896,7 @@
       "endsAt": "2026-10-26T00:15:00.000Z",
       "durationMinutes": 90,
       "capacity": 5,
-      "ticketsSold": 0,
+      "ticketsSold": 1,
       "fixedTicketPrice": 65,
       "location": "",
       "inPerson": true
@@ -8920,7 +8920,7 @@
       "endsAt": "2026-10-26T01:30:00.000Z",
       "durationMinutes": 90,
       "capacity": 5,
-      "ticketsSold": 4,
+      "ticketsSold": 5,
       "fixedTicketPrice": 65,
       "location": "",
       "inPerson": true
