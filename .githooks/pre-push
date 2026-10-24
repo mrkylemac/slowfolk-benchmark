@@ -4,6 +4,15 @@
 # deploy (from 28 Sep to 23 Oct 2026 it sat on a build with conflict markers
 # in globals.css). Skip with `git push --no-verify` when you must.
 
+# git feeds one line per ref: <local ref> <local sha> <remote ref> <remote sha>.
+# A deletion sends an all-zero local sha and has nothing to build, so a push
+# made only of deletions skips the check.
+pushes_code=
+while read -r _ local_sha _ _; do
+  case "$local_sha" in *[!0]*) pushes_code=1 ;; esac
+done
+[ -n "$pushes_code" ] || exit 0
+
 # Conflict markers anywhere outside the venue cache, indented or not: a
 # formatter had re-indented the ones above, which hid them from a plain ^<<<.
 if git grep -nE '^[[:space:]]*(<<<<<<<|>>>>>>>)|^[[:space:]]*=======([^=]|$)' -- ':!src/data' ':!*.md'; then
