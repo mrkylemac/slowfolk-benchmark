@@ -31,9 +31,14 @@ export async function listUsers(): Promise<ManagedUser[]> {
 }
 
 export async function setUserApproval(userId: string, approved: boolean): Promise<ManagedUser | null> {
+  // Approving someone vouches for their address. Password signups never verify
+  // email, and Better Auth will only link a Google login onto a verified
+  // account, so without this an approved user's "Continue with Google" fails
+  // with account_not_linked. Revoking leaves the flag alone.
   const { rows } = await pool.query<ManagedUser>(
     `UPDATE "user"
         SET "approved" = $2,
+            "emailVerified" = "emailVerified" OR $2,
             "approvedAt" = CASE WHEN $2 THEN NOW() ELSE NULL END,
             "updatedAt" = NOW()
       WHERE id = $1

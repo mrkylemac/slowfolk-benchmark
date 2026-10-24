@@ -80,13 +80,14 @@ export const auth = betterAuth({
         before: async (user, context) => {
           if (isBootstrapAdmin(user.email)) {
             return {
-              data: { ...user, approved: true, role: 'admin', approvedAt: new Date() },
+              data: { ...user, approved: true, emailVerified: true, role: 'admin', approvedAt: new Date() },
             };
           }
           // Someone signing up through an admin's invite link, with the address
           // it was issued for, is let straight in. See inviteTokens.ts.
           if (await matchingInvite(user.email, context)) {
-            return { data: { ...user, approved: true, role: 'user', approvedAt: new Date() } };
+            // Approval vouches for the address, as setUserApproval does.
+            return { data: { ...user, approved: true, emailVerified: true, role: 'user', approvedAt: new Date() } };
           }
           return { data: { ...user, approved: false, role: 'user' } };
         },
