@@ -105,6 +105,12 @@ export interface VenueConfig {
    * cache. Delete the entry only when the venue should stop being fetched.
    */
   hidden?: boolean;
+  /**
+   * Tile image for the venue grid, served from `public/`. Wins over the
+   * platform's own profile picture, which otherwise replaces any default as
+   * soon as the venue is fetched.
+   */
+  image?: string;
 }
 
 // Venue list
@@ -185,7 +191,7 @@ export const VENUES: VenueConfig[] = [
   //
   // Prices are NZD and are summed as dollars in revenue figures, as KEEN's CHF
   // are. City not yet confirmed; Momence reports only the country.
-  { id: '284871', name: 'Sink Bathhouse', platform: 'momence', location: 'New Zealand', timezone: 'Pacific/Auckland' },
+  { id: '284871', name: 'Sink Bathhouse', platform: 'momence', location: 'New Zealand', timezone: 'Pacific/Auckland', image: '/venues/sink.jpg' },
   { id: 'thecornersauna', name: 'The Corner Sauna', platform: 'acuity', location: 'Apollo Bay', timezone: 'Australia/Sydney' },
   {
     id: 'capybarabathing', name: 'Capybara Bathing', platform: 'acuity', location: 'Surry Hills', timezone: 'Australia/Sydney',

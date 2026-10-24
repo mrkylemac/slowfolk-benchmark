@@ -7,7 +7,16 @@ import { VENUES } from '@/config/api';
 import { getAllCachedEntries, getCacheKey } from '@/lib/venueCache';
 import { Card, CardContent } from '@/components/ui/card';
 
-const FEATURED_IDS = ['innerstudio', '59636', '49448', 'alchemysaunas', 'navia', '41275'];
+// A venue's configured `image` is a deliberate choice, so it beats both the
+// server map and the profile picture cached by the last fetch.
+function withConfiguredImages(logoMap: Record<string, string>): Record<string, string> {
+  for (const venue of VENUES) {
+    if (venue.image) logoMap[venue.id] = venue.image;
+  }
+  return logoMap;
+}
+
+const FEATURED_IDS = ['innerstudio', '59636', '49448', 'alchemysaunas', 'navia', '41275', '284871'];
 
 export function HomeClient() {
   const router = useRouter();
@@ -32,7 +41,7 @@ export function HomeClient() {
           const entry = cache[getCacheKey(venue.id, venue.platform)];
           if (entry?.hostInfo?.profileImage) logoMap[venue.id] = entry.hostInfo.profileImage;
         }
-        setLogos(logoMap);
+        setLogos(withConfiguredImages(logoMap));
       })
       .catch(() => {
         // Fallback to localStorage only — single parse for all venues
@@ -42,7 +51,7 @@ export function HomeClient() {
           const entry = cache[getCacheKey(venue.id, venue.platform)];
           if (entry?.hostInfo?.profileImage) logoMap[venue.id] = entry.hostInfo.profileImage;
         }
-        setLogos(logoMap);
+        setLogos(withConfiguredImages(logoMap));
       });
   }, []);
 
