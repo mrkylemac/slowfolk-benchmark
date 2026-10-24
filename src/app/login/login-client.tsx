@@ -10,6 +10,20 @@ import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Label } from '@/components/ui/label';
 
+// Better Auth reports a failed Google sign-in as `?error=<code>` on the
+// errorCallbackURL. Without one it falls back to `/?error=`, which the
+// middleware bounces to /login and the reason is lost.
+const GOOGLE_ERRORS: Record<string, string> = {
+  state_mismatch: 'Google sign-in expired or was started in another tab. Try again.',
+  account_not_linked: 'That Google account could not be linked to your existing account.',
+  unable_to_link_account: 'That Google account could not be linked to your existing account.',
+  access_denied: 'Google sign-in was cancelled.',
+};
+
+function describeAuthError(code: string): string {
+  return `${GOOGLE_ERRORS[code] ?? 'Google sign-in failed.'} (${code})`;
+}
+
 interface LoginClientProps {
   googleEnabled: boolean;
 }
@@ -23,7 +37,8 @@ export function LoginClient({ googleEnabled }: LoginClientProps) {
 
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
-  const [error, setError] = useState<string | null>(null);
+  const errorCode = searchParams?.get('error');
+  const [error, setError] = useState<string | null>(errorCode ? describeAuthError(errorCode) : null);
   const [busy, setBusy] = useState(false);
 
   const handleSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
@@ -48,7 +63,11 @@ export function LoginClient({ googleEnabled }: LoginClientProps) {
   const handleGoogle = async () => {
     setError(null);
     setBusy(true);
-    await signIn.social({ provider: 'google', callbackURL: next });
+    await signIn.social({
+      provider: 'google',
+      callbackURL: next,
+      errorCallbackURL: `/login?next=${encodeURIComponent(next)}`,
+    });
   };
 
   return (
