@@ -34,7 +34,7 @@ yarn test             # Run tests once (vitest run)
 yarn test:watch       # Run tests in watch mode
 yarn fetch-venues     # Bulk fetch all venue data
 yarn poll:acuity      # Poll Acuity venues (used by GitHub Actions)
-yarn poll:trybe       # Poll TryBe venues (used by GitHub Actions)
+yarn poll:trybe       # Poll TryBe venues (not scheduled: Sense of Self is archived)
 yarn poll:punchpass   # Poll Punchpass venues (add --deep to re-probe capacity oracle)
 yarn poll:navia       # Poll Navia venues (add --deep to walk the full forward horizon)
 yarn poll:navia-windows # Navia's settled counts, which the report reads (--deep, --backfill, --seed-feed-history)
@@ -197,7 +197,7 @@ rule existed). Put local secrets in `.env.local` instead.
 
 ## CI/CD
 
-- **Venue polling** (`.github/workflows/poll-venues.yml`): every 15 min, timezone-aware gating (Melbourne time), polls Acuity, TryBe, Punchpass and Navia, commits updated cache files. The 15-minute beat is set by Navia, whose bookable entries expire every 15 min; the repo is public so standard runners are free
+- **Venue polling** (`.github/workflows/poll-venues.yml`): every 15 min, timezone-aware gating (Melbourne time), polls Acuity, Punchpass and Navia, commits updated cache files. TryBe is no longer polled: its one venue, Sense of Self, moved to Zenoti and is archived (hidden, cache kept). The 15-minute beat is set by Navia, whose bookable entries expire every 15 min; the repo is public so standard runners are free
 - **The 15-minute trigger is a Cloudflare Worker** (`workers/poll-dispatcher`), not the workflow's `schedule`. GitHub's scheduler is best effort and delivered as few as 6 of 96 runs a day, so the worker dispatches the workflow through the API instead. `schedule` remains as a fallback. Dispatched runs respect the time gates unless the `force` input is ticked, which polls everything with deep refreshes
 - **Token refresh** (`.github/workflows/refresh-glofox-tokens.yml`): weekly on Mondays, refreshes Glofox guest tokens, commits to `src/config/api.ts`
 - Both workflows tag their commits `[skip ci]` so they don't re-trigger themselves. That suppresses GitHub Actions, but **not** Vercel, which has no built-in support for the convention — so the data they commit deploys normally.

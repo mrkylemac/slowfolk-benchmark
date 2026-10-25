@@ -139,7 +139,12 @@ export const VENUES: VenueConfig[] = [
   { id: 'lore', name: 'Lore Bathing Club', platform: 'glofox', location: 'New York', timezone: 'America/New_York' },
   { id: 'projectmood', name: 'Project Mood', platform: 'marianatek', location: 'Melbourne', timezone: 'Australia/Melbourne', hidden: true },
   { id: 'aerth', name: 'Ærth Saunas', platform: 'marianatek', location: 'Victoria BC', timezone: 'America/Vancouver', hidden: true },
-  { id: 'senseofself', name: 'Sense of Self', platform: 'trybe', location: 'Melbourne', timezone: 'Australia/Melbourne' },
+  // Archived: Sense of Self moved its booking to Zenoti around September 2026
+  // and left the TryBe slots switched off. TryBe reports a switched-off slot as
+  // full (room_unavailable), so from mid-September the cached "sold" figures are
+  // closed slots, not bookings; March to August mixes real partial bookings with
+  // them. No longer polled; the cache ends at 25 October 2026.
+  { id: 'senseofself', name: 'Sense of Self', platform: 'trybe', location: 'Melbourne', timezone: 'Australia/Melbourne', hidden: true },
   { id: '40726', name: 'Panda Society', platform: 'momence', location: '', timezone: 'Australia/Melbourne', hidden: true },
   { id: 'portal', name: 'PORTAL° Thermaculture', platform: 'portal', location: 'Colorado · Montana · Minnesota', timezone: 'America/Denver' },
   { id: 'xtraclubs', name: 'Xtra Clubs', platform: 'xtraclubs', location: 'Sydney', timezone: 'Australia/Sydney' },
