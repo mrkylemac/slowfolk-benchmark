@@ -30,12 +30,12 @@ export type EmailResult =
   | { status: 'failed'; reason: string };
 
 /**
- * Resend's shared sender. It works with no DNS setup, which is what makes this
- * usable before slowfolk.au is verified, but it can only deliver to the address
- * that owns the Resend account. Set EMAIL_FROM to an address on a verified
- * domain to reach anyone else.
+ * Sends from email.slowfolk.au, the domain verified in Resend, so mail reaches
+ * any address. EMAIL_FROM overrides it, for example Resend's shared
+ * `onboarding@resend.dev`, which needs no DNS but only delivers to the address
+ * that owns the Resend account.
  */
-const DEFAULT_FROM = 'onboarding@resend.dev';
+const DEFAULT_FROM = 'Slow Folk Benchmark <updates@email.slowfolk.au>';
 
 let client: Resend | null = null;
 

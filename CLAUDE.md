@@ -160,9 +160,9 @@ created via signup but start `approved = false` and are switched on by hand at
   allowlisted address because password signups don't verify email, so an
   address alone could be claimed by anyone who knows it. Only a hash of the
   token is stored. The `access_invite` table sits outside Better Auth's schema
-  and is created on first use (`src/lib/invites.ts`). Invite emails only reach
-  outside addresses once `EMAIL_FROM` is on a verified domain; the dashboard
-  always shows the link to copy.
+  and is created on first use (`src/lib/invites.ts`). Invite emails go out
+  from `updates@email.slowfolk.au`; the dashboard always shows the link to
+  copy.
 - Schema lives in `src/db/auth-schema.sql`; regenerate with `yarn auth:generate`.
 
 See `AUTH-SETUP.md` for the deployment and bootstrap story.
@@ -179,7 +179,7 @@ Required variables (see `.env.example`):
 - `RESEND_API_KEY` — email admins when someone requests access (optional; unset
   skips the send and logs it, signup still succeeds)
 - `EMAIL_FROM` — sender address for those emails (optional; defaults to
-  Resend's shared `onboarding@resend.dev`)
+  `Slow Folk Benchmark <updates@email.slowfolk.au>`)
 - `GOOGLE_SHEETS_API_KEY` — CapEx tracker data (optional)
 - `GOOGLE_SHEETS_SPREADSHEET_ID` — CapEx Google Sheet ID (optional)
 

@@ -66,15 +66,16 @@ sits in the database until an admin opens `/admin/users`.
 | Variable | Value |
 |----------|-------|
 | `RESEND_API_KEY` | A key from [resend.com/api-keys](https://resend.com/api-keys) |
-| `EMAIL_FROM` | Sender address. Optional. |
+| `EMAIL_FROM` | Sender address. Optional; defaults to `updates@email.slowfolk.au`. |
 
 Leave `RESEND_API_KEY` unset and signup still works: the send is skipped and
 logged, and no failure reaches the person signing up. A rejected or failed send
 is swallowed the same way, since the account has already been created by then.
 
-`EMAIL_FROM` defaults to Resend's shared `onboarding@resend.dev`, which needs no
-DNS setup but only delivers to the address that owns the Resend account. To mail
-anyone else, verify a domain in Resend and set this to an address on it.
+`EMAIL_FROM` defaults to `Slow Folk Benchmark <updates@email.slowfolk.au>`, on
+the `email.slowfolk.au` domain verified in Resend. Resend's shared
+`onboarding@resend.dev` needs no DNS setup but only delivers to the address that
+owns the Resend account.
 
 The email goes to every address in `ADMIN_EMAILS`, minus the requester, and
 links to `/admin/users`.
