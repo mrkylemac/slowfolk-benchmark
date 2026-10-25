@@ -4,13 +4,16 @@ import type { BenchmarkMetrics } from '@/lib/benchmarkMetrics';
 
 // ── Internal sort helper ───────────────────────────────────────────────────────
 
+const MONTH_INDEX_MAP: Record<string, number> = {
+  January: 0, February: 1, March: 2, April: 3, May: 4, June: 5,
+  July: 6, August: 7, September: 8, October: 9, November: 10, December: 11,
+};
+
 function sortedMonthly(data: MonthlyData[]): MonthlyData[] {
+  // Sort using O(1) month index lookup instead of parsing Date objects inside the sort comparator
   return [...data].sort((a, b) => {
     if (a.year !== b.year) return a.year - b.year;
-    return (
-      new Date(`${a.month} 1, ${a.year}`).getMonth() -
-      new Date(`${b.month} 1, ${b.year}`).getMonth()
-    );
+    return (MONTH_INDEX_MAP[a.month] ?? 0) - (MONTH_INDEX_MAP[b.month] ?? 0);
   });
 }
 
