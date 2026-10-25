@@ -716,13 +716,17 @@ export function ReportClient() {
   // measurable, plus rows whose booking count is real even where occupancy
   // cannot be measured (Navia Prahran publishes bookings but no seat total).
   // A row with no booking count at all plots as a zero visitor session and
-  // contradicts the headline rates, which already ignore it.
-  const chartSessions = useMemo(
-    () => filteredSessions.filter(
-      s => s.utilisationKnown !== false || (!!s.soldSource && s.soldSource !== 'unknown'),
-    ),
-    [filteredSessions],
-  );
+  // contradicts the headline rates, which already ignore it. Sessions still to
+  // run are left out like they are from the headline rates: "All time" applies
+  // no date filter and "Today" runs to midnight, so without this the charts
+  // plotted half-sold future sessions (TryBe publishes months ahead).
+  const chartSessions = useMemo(() => {
+    const nowMs = Date.now();
+    return filteredSessions.filter(
+      s => new Date(s.startsAt).getTime() <= nowMs
+        && (s.utilisationKnown !== false || (!!s.soldSource && s.soldSource !== 'unknown')),
+    );
+  }, [filteredSessions]);
 
   const benchmarkMetrics = useMemo(() => {
     if (eligibleSessions.length === 0) return null;
@@ -1118,7 +1122,6 @@ export function ReportClient() {
             metrics={benchmarkMetrics}
             monthlyData={filteredMonthlyData}
             period={period}
-            platform={platform}
             hostId={hostId ?? entry?.hostId}
           />
         ) : filteredSessions.length > 0 ? (

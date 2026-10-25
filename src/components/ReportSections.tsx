@@ -149,12 +149,10 @@ function SnapshotSection({
   sessions,
   metrics,
   period,
-  platform,
 }: {
   sessions: MomenceSession[];
   metrics: BenchmarkMetrics;
   period: string;
-  platform?: string;
 }) {
   const isSingleDay = metrics.daysInRange <= 1;
   const granConfig = getGranularityConfig(period);
@@ -214,12 +212,6 @@ function SnapshotSection({
     <Card className="print-section">
       <CardContent className="px-4 py-4 sm:p-5">
         <CardHeader title="Snapshot" />
-
-        {platform === 'trybe' && (
-          <p className="text-sm text-muted-foreground mb-4">
-            Data shows upcoming bookings only. TryBe doesn&apos;t expose historical records via its public API — past session data will build up here over time as you re-sync.
-          </p>
-        )}
 
         {/* Visitors chart */}
         {chartData.length > 1 && (
@@ -556,7 +548,6 @@ interface ReportSectionsProps {
   metrics: BenchmarkMetrics;
   monthlyData: MonthlyData[];
   period: string;
-  platform?: string;
   hostId?: string;
 }
 
@@ -565,13 +556,12 @@ export function ReportSections({
   metrics,
   monthlyData,
   period,
-  platform,
   hostId,
 }: ReportSectionsProps) {
   return (
     <div className="flex flex-col gap-5 sm:gap-8 mb-12">
       <div className="section-animate -mx-4 sm:mx-0" style={{ animationDelay: '0ms' }}>
-        <SnapshotSection sessions={sessions} metrics={metrics} period={period} platform={platform} />
+        <SnapshotSection sessions={sessions} metrics={metrics} period={period} />
       </div>
       <div className="section-animate -mx-4 sm:mx-0" style={{ animationDelay: '60ms' }}>
         <CapacitySection metrics={metrics} monthlyData={monthlyData} />
