@@ -7,7 +7,7 @@
     "from": "2026-08-14T07:00:00.000Z",
     "to": "2026-10-28T10:00:00.000Z"
   },
-  "cachedAt": "2026-10-26T05:01:33.021Z",
+  "cachedAt": "2026-10-26T05:16:37.369Z",
   "sessions": [
     {
       "id": "navia-1-2026-08-14T07:00:00.000Z",
@@ -23860,15 +23860,22 @@
       "startsAt": "2026-10-26T04:00:00.000Z",
       "endsAt": "2026-10-26T06:00:00.000Z",
       "durationMinutes": 120,
-      "capacity": 16,
-      "ticketsSold": 16,
+      "capacity": 15,
+      "ticketsSold": 15,
       "fixedTicketPrice": 80,
       "location": "Byron Bay",
       "inPerson": true,
       "soldSource": "reported",
       "measure": "seats",
       "capacitySource": "derived-grid",
-      "confidence": "medium"
+      "confidence": "medium",
+      "supersededSold": {
+        "ticketsSold": 16,
+        "source": "slot-feed",
+        "reason": "room-full-read-as-sold",
+        "note": "We recorded 16 and Navia has 15. The room was nearly full when we read it, and the slot feed reports a full room as seats sold, so ours was most likely an overcount rather than cancellations. Navia's figure is used, decided 2026-09-13. Our count is kept here so that can be revisited.",
+        "decidedOn": "2026-09-13"
+      }
     },
     {
       "id": "navia-2-2026-10-26T04:00:00.000Z",
@@ -24556,7 +24563,7 @@
       "endsAt": "2026-10-28T08:00:00.000Z",
       "durationMinutes": 120,
       "capacity": 16,
-      "ticketsSold": 4,
+      "ticketsSold": 6,
       "fixedTicketPrice": 80,
       "location": "Byron Bay",
       "inPerson": true,
