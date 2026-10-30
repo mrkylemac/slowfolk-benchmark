@@ -7,7 +7,7 @@
     "from": "2026-08-14T07:00:00.000Z",
     "to": "2026-11-02T10:00:00.000Z"
   },
-  "cachedAt": "2026-10-30T22:01:31.423Z",
+  "cachedAt": "2026-10-30T22:16:14.812Z",
   "sessions": [
     {
       "id": "navia-1-2026-08-14T07:00:00.000Z",
@@ -25471,7 +25471,7 @@
       "startsAt": "2026-10-30T22:00:00.000Z",
       "endsAt": "2026-10-31T00:00:00.000Z",
       "durationMinutes": 120,
-      "capacity": 12,
+      "capacity": 8,
       "ticketsSold": 1,
       "fixedTicketPrice": 80,
       "location": "Byron Bay",
@@ -25488,21 +25488,14 @@
       "endsAt": "2026-10-30T23:00:00.000Z",
       "durationMinutes": 60,
       "capacity": 32,
-      "ticketsSold": 3,
+      "ticketsSold": 4,
       "fixedTicketPrice": 0,
       "location": "Prahran",
       "inPerson": true,
       "soldSource": "reported",
       "measure": "seats",
       "capacitySource": "derived-grid",
-      "confidence": "medium",
-      "supersededSold": {
-        "ticketsSold": 4,
-        "source": "slot-feed",
-        "reason": "no-supporting-reading",
-        "note": "We recorded 4 and Navia has 3, and no reading before start supports our figure, so where it came from cannot be checked. Navia's figure is used, decided 2026-09-13. Our count is kept here so that can be revisited.",
-        "decidedOn": "2026-09-13"
-      }
+      "confidence": "medium"
     },
     {
       "id": "navia-2-2026-10-30T23:00:00.000Z",
@@ -25511,7 +25504,7 @@
       "endsAt": "2026-10-31T00:00:00.000Z",
       "durationMinutes": 60,
       "capacity": 32,
-      "ticketsSold": 8,
+      "ticketsSold": 9,
       "fixedTicketPrice": 0,
       "location": "Prahran",
       "inPerson": true,
@@ -25543,7 +25536,7 @@
       "endsAt": "2026-10-31T01:00:00.000Z",
       "durationMinutes": 60,
       "capacity": 32,
-      "ticketsSold": 1,
+      "ticketsSold": 3,
       "fixedTicketPrice": 0,
       "location": "Prahran",
       "inPerson": true,
@@ -26055,7 +26048,7 @@
       "endsAt": "2026-11-01T08:00:00.000Z",
       "durationMinutes": 60,
       "capacity": 32,
-      "ticketsSold": 0,
+      "ticketsSold": 2,
       "fixedTicketPrice": 0,
       "location": "Prahran",
       "inPerson": true,
