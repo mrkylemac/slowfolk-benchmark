@@ -7,7 +7,7 @@
     "from": "2026-08-14T07:00:00.000Z",
     "to": "2026-12-08T10:00:00.000Z"
   },
-  "cachedAt": "2026-11-04T01:32:02.127Z",
+  "cachedAt": "2026-11-04T01:47:17.861Z",
   "sessions": [
     {
       "id": "navia-1-2026-08-14T07:00:00.000Z",
@@ -80844,7 +80844,7 @@
       "endsAt": "2026-11-04T03:00:00.000Z",
       "durationMinutes": 60,
       "capacity": 32,
-      "ticketsSold": 3,
+      "ticketsSold": 6,
       "fixedTicketPrice": 0,
       "location": "Prahran",
       "inPerson": true,
@@ -80924,7 +80924,7 @@
       "endsAt": "2026-11-04T08:00:00.000Z",
       "durationMinutes": 120,
       "capacity": 16,
-      "ticketsSold": 3,
+      "ticketsSold": 4,
       "fixedTicketPrice": 80,
       "location": "Byron Bay",
       "inPerson": true,
@@ -80956,7 +80956,7 @@
       "endsAt": "2026-11-04T08:00:00.000Z",
       "durationMinutes": 60,
       "capacity": 32,
-      "ticketsSold": 8,
+      "ticketsSold": 9,
       "fixedTicketPrice": 0,
       "location": "Prahran",
       "inPerson": true,
