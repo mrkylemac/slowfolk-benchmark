@@ -7,7 +7,7 @@
     "from": "2026-09-26T00:45:00.000Z",
     "to": "2026-11-10T08:00:00.000Z"
   },
-  "cachedAt": "2026-11-08T02:01:39.274Z",
+  "cachedAt": "2026-11-08T02:16:25.752Z",
   "sessions": [
     {
       "id": "acuity-57414776-9539301-2026-09-26T10:45:00+10:00",
@@ -12892,7 +12892,7 @@
       "endsAt": "2026-11-08T05:15:00.000Z",
       "durationMinutes": 90,
       "capacity": 5,
-      "ticketsSold": 4,
+      "ticketsSold": 5,
       "fixedTicketPrice": 70,
       "location": "",
       "inPerson": true
@@ -12952,7 +12952,7 @@
       "endsAt": "2026-11-08T06:45:00.000Z",
       "durationMinutes": 90,
       "capacity": 5,
-      "ticketsSold": 2,
+      "ticketsSold": 4,
       "fixedTicketPrice": 70,
       "location": "",
       "inPerson": true
@@ -13012,7 +13012,7 @@
       "endsAt": "2026-11-08T08:00:00.000Z",
       "durationMinutes": 90,
       "capacity": 5,
-      "ticketsSold": 0,
+      "ticketsSold": 2,
       "fixedTicketPrice": 70,
       "location": "",
       "inPerson": true
