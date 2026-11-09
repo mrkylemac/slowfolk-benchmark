@@ -349,8 +349,8 @@ export const GLOFOX_CONFIG = {
     namespace: "wellnesssocialbusine",
     name: 'Wellness Social Club',
     timezone: 'Australia/Melbourne',
-    token: 'eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiJfIiwiZXhwIjoxNzk2MjE5NzA1LCJpYXQiOjE3OTM2Mjc3MDUsImlzcyI6Il8iLCJ1c2VyIjp7Il9pZCI6Imd1ZXN0IiwibmFtZXNwYWNlIjoid2VsbG5lc3Nzb2NpYWxidXNpbmUiLCJicmFuY2hfaWQiOiI2NzY5YmMwN2RkOTYzZDFiMDEwODgwNGIiLCJmaXJzdF9uYW1lIjoiR3Vlc3QiLCJsYXN0X25hbWUiOiJVc2VyIiwidHlwZSI6IkdVRVNUIiwiaXNTdXBlckFkbWluIjpmYWxzZX19.tJvVx8xF65AmkXCUU6aVz-SZ7Bo94Cby_mZrRRgCtJU',
-    tokenExpiry: '2026-12-02',
+    token: 'eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiJfIiwiZXhwIjoxNzk2ODI2MzU0LCJpYXQiOjE3OTQyMzQzNTQsImlzcyI6Il8iLCJ1c2VyIjp7Il9pZCI6Imd1ZXN0IiwibmFtZXNwYWNlIjoid2VsbG5lc3Nzb2NpYWxidXNpbmUiLCJicmFuY2hfaWQiOiI2NzY5YmMwN2RkOTYzZDFiMDEwODgwNGIiLCJmaXJzdF9uYW1lIjoiR3Vlc3QiLCJsYXN0X25hbWUiOiJVc2VyIiwidHlwZSI6IkdVRVNUIiwiaXNTdXBlckFkbWluIjpmYWxzZX19.DbfiP0XvX3t0lVl9F-LS-4RLO8BpRbUORQi7_tLBlFc',
+    tokenExpiry: '2026-12-09',
     operatingSince: '2025-06-01',
   },
 } as const;
