@@ -7,7 +7,7 @@
     "from": "2026-09-26T00:45:00.000Z",
     "to": "2026-12-01T03:00:00.000Z"
   },
-  "cachedAt": "2026-11-13T22:01:19.554Z",
+  "cachedAt": "2026-11-13T22:16:14.849Z",
   "sessions": [
     {
       "id": "acuity-57414776-9539301-2026-09-26T10:45:00+10:00",
@@ -16662,6 +16662,18 @@
       "capacity": 5,
       "ticketsSold": 3,
       "fixedTicketPrice": 70,
+      "location": "",
+      "inPerson": true
+    },
+    {
+      "id": "acuity-57411393-9539301-2026-11-30T10:15:00+11:00",
+      "sessionName": "Bathing (Off-Peak)",
+      "startsAt": "2026-11-29T23:15:00.000Z",
+      "endsAt": "2026-11-30T00:45:00.000Z",
+      "durationMinutes": 90,
+      "capacity": 5,
+      "ticketsSold": 0,
+      "fixedTicketPrice": 65,
       "location": "",
       "inPerson": true
     },
