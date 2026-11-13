@@ -7,7 +7,7 @@
     "from": "2026-08-14T07:00:00.000Z",
     "to": "2026-12-17T10:00:00.000Z"
   },
-  "cachedAt": "2026-11-13T00:47:18.409Z",
+  "cachedAt": "2026-11-13T01:02:31.098Z",
   "sessions": [
     {
       "id": "navia-1-2026-08-14T07:00:00.000Z",
@@ -92039,6 +92039,23 @@
       "confidence": "medium"
     },
     {
+      "id": "navia-2-2026-11-10T01:15:00.000Z",
+      "sessionName": "Bathing",
+      "startsAt": "2026-11-10T01:15:00.000Z",
+      "endsAt": "2026-11-10T02:15:00.000Z",
+      "durationMinutes": 60,
+      "capacity": 0,
+      "ticketsSold": 0,
+      "fixedTicketPrice": 0,
+      "location": "Prahran",
+      "inPerson": true,
+      "utilisationKnown": false,
+      "capacitySource": "unknown",
+      "soldSource": "unknown",
+      "measure": "seats",
+      "confidence": "low"
+    },
+    {
       "id": "navia-1-2026-11-10T02:00:00.000Z",
       "sessionName": "Bathing",
       "startsAt": "2026-11-10T02:00:00.000Z",
@@ -93057,7 +93074,7 @@
       "endsAt": "2026-11-13T04:00:00.000Z",
       "durationMinutes": 120,
       "capacity": 16,
-      "ticketsSold": 11,
+      "ticketsSold": 12,
       "fixedTicketPrice": 80,
       "location": "Byron Bay",
       "inPerson": true,
@@ -93169,7 +93186,7 @@
       "endsAt": "2026-11-13T07:00:00.000Z",
       "durationMinutes": 60,
       "capacity": 32,
-      "ticketsSold": 5,
+      "ticketsSold": 4,
       "fixedTicketPrice": 0,
       "location": "Prahran",
       "inPerson": true,
@@ -93332,7 +93349,7 @@
       "endsAt": "2026-11-14T00:00:00.000Z",
       "durationMinutes": 60,
       "capacity": 32,
-      "ticketsSold": 5,
+      "ticketsSold": 7,
       "fixedTicketPrice": 0,
       "location": "Prahran",
       "inPerson": true,
@@ -93923,22 +93940,6 @@
       "soldSource": "unknown",
       "measure": "seats",
       "confidence": "low"
-    },
-    {
-      "id": "navia-2-2026-11-16T01:00:00.000Z",
-      "sessionName": "Bathing",
-      "startsAt": "2026-11-16T01:00:00.000Z",
-      "endsAt": "2026-11-16T02:00:00.000Z",
-      "durationMinutes": 60,
-      "capacity": 32,
-      "ticketsSold": 0,
-      "fixedTicketPrice": 0,
-      "location": "Prahran",
-      "inPerson": true,
-      "capacitySource": "derived-grid",
-      "soldSource": "derived-grid",
-      "measure": "seats",
-      "confidence": "medium"
     },
     {
       "id": "navia-1-2026-11-16T02:00:00.000Z",
