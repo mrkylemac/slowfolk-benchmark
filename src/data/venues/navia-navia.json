@@ -7,7 +7,7 @@
     "from": "2026-08-14T07:00:00.000Z",
     "to": "2026-12-18T10:00:00.000Z"
   },
-  "cachedAt": "2026-11-14T00:16:41.995Z",
+  "cachedAt": "2026-11-14T00:31:26.289Z",
   "sessions": [
     {
       "id": "navia-1-2026-08-14T07:00:00.000Z",
@@ -93346,6 +93346,40 @@
       "confidence": "low"
     },
     {
+      "id": "navia-1-2026-11-11T00:45:00.000Z",
+      "sessionName": "Bathing",
+      "startsAt": "2026-11-11T00:45:00.000Z",
+      "endsAt": "2026-11-11T02:45:00.000Z",
+      "durationMinutes": 120,
+      "capacity": 0,
+      "ticketsSold": 0,
+      "fixedTicketPrice": 80,
+      "location": "Byron Bay",
+      "inPerson": true,
+      "utilisationKnown": false,
+      "capacitySource": "unknown",
+      "soldSource": "unknown",
+      "measure": "seats",
+      "confidence": "low"
+    },
+    {
+      "id": "navia-2-2026-11-11T00:45:00.000Z",
+      "sessionName": "Bathing",
+      "startsAt": "2026-11-11T00:45:00.000Z",
+      "endsAt": "2026-11-11T01:45:00.000Z",
+      "durationMinutes": 60,
+      "capacity": 0,
+      "ticketsSold": 0,
+      "fixedTicketPrice": 0,
+      "location": "Prahran",
+      "inPerson": true,
+      "utilisationKnown": false,
+      "capacitySource": "unknown",
+      "soldSource": "unknown",
+      "measure": "seats",
+      "confidence": "low"
+    },
+    {
       "id": "navia-2-2026-11-11T01:00:00.000Z",
       "sessionName": "Bathing",
       "startsAt": "2026-11-11T01:00:00.000Z",
@@ -94512,7 +94546,7 @@
       "endsAt": "2026-11-14T08:00:00.000Z",
       "durationMinutes": 60,
       "capacity": 32,
-      "ticketsSold": 0,
+      "ticketsSold": 2,
       "fixedTicketPrice": 0,
       "location": "Prahran",
       "inPerson": true,
@@ -94674,7 +94708,7 @@
       "endsAt": "2026-11-15T02:00:00.000Z",
       "durationMinutes": 120,
       "capacity": 16,
-      "ticketsSold": 11,
+      "ticketsSold": 9,
       "fixedTicketPrice": 80,
       "location": "Byron Bay",
       "inPerson": true,
