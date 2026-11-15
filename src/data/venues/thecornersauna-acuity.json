@@ -5,9 +5,9 @@
   "venueName": "The Corner Sauna",
   "dateRange": {
     "from": "2026-03-06T07:00:00.000Z",
-    "to": "2026-11-29T06:00:00.000Z"
+    "to": "2026-11-29T07:00:00.000Z"
   },
-  "cachedAt": "2026-11-15T06:46:22.988Z",
+  "cachedAt": "2026-11-15T07:01:29.446Z",
   "sessions": [
     {
       "id": "acuity-71669392-11172572-2026-03-06T18:00:00+1100",
@@ -11810,6 +11810,18 @@
       "sessionName": "Single Session",
       "startsAt": "2026-11-29T06:00:00.000Z",
       "endsAt": "2026-11-29T07:00:00.000Z",
+      "durationMinutes": 60,
+      "capacity": 8,
+      "ticketsSold": 0,
+      "fixedTicketPrice": 40,
+      "location": "",
+      "inPerson": true
+    },
+    {
+      "id": "acuity-86988395-13261360-2026-11-29T18:00:00+1100",
+      "sessionName": "Silent Sauna",
+      "startsAt": "2026-11-29T07:00:00.000Z",
+      "endsAt": "2026-11-29T08:00:00.000Z",
       "durationMinutes": 60,
       "capacity": 8,
       "ticketsSold": 0,
