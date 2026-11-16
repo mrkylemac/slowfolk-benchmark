@@ -7,7 +7,7 @@
     "from": "2026-08-14T07:00:00.000Z",
     "to": "2026-11-18T10:00:00.000Z"
   },
-  "cachedAt": "2026-11-16T06:16:55.803Z",
+  "cachedAt": "2026-11-16T06:31:35.644Z",
   "sessions": [
     {
       "id": "navia-1-2026-08-14T07:00:00.000Z",
@@ -31276,7 +31276,7 @@
       "startsAt": "2026-11-16T06:00:00.000Z",
       "endsAt": "2026-11-16T08:00:00.000Z",
       "durationMinutes": 120,
-      "capacity": 16,
+      "capacity": 14,
       "ticketsSold": 10,
       "fixedTicketPrice": 80,
       "location": "Byron Bay",
@@ -31284,7 +31284,14 @@
       "soldSource": "reported",
       "measure": "seats",
       "capacitySource": "derived-grid",
-      "confidence": "medium"
+      "confidence": "medium",
+      "supersededSold": {
+        "ticketsSold": 12,
+        "source": "slot-feed",
+        "reason": "cancelled-after-reading",
+        "note": "We recorded 12 before the sitting started and Navia now has 10. Treated as bookings cancelled after our reading. Navia's figure is used, decided 2026-09-13. Our count is kept here so that can be revisited.",
+        "decidedOn": "2026-09-13"
+      }
     },
     {
       "id": "navia-2-2026-11-16T06:00:00.000Z",
@@ -31309,7 +31316,7 @@
       "endsAt": "2026-11-16T08:00:00.000Z",
       "durationMinutes": 60,
       "capacity": 32,
-      "ticketsSold": 4,
+      "ticketsSold": 5,
       "fixedTicketPrice": 0,
       "location": "Prahran",
       "inPerson": true,
