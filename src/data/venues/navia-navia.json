@@ -7,7 +7,7 @@
     "from": "2026-08-14T07:00:00.000Z",
     "to": "2026-12-30T06:00:00.000Z"
   },
-  "cachedAt": "2026-11-26T07:47:28.515Z",
+  "cachedAt": "2026-11-26T08:02:12.609Z",
   "sessions": [
     {
       "id": "navia-1-2026-08-14T07:00:00.000Z",
@@ -110173,6 +110173,23 @@
       "confidence": "medium"
     },
     {
+      "id": "navia-2-2026-11-23T08:15:00.000Z",
+      "sessionName": "Bathing",
+      "startsAt": "2026-11-23T08:15:00.000Z",
+      "endsAt": "2026-11-23T09:15:00.000Z",
+      "durationMinutes": 60,
+      "capacity": 0,
+      "ticketsSold": 0,
+      "fixedTicketPrice": 0,
+      "location": "Prahran",
+      "inPerson": true,
+      "utilisationKnown": false,
+      "capacitySource": "unknown",
+      "soldSource": "unknown",
+      "measure": "seats",
+      "confidence": "low"
+    },
+    {
       "id": "navia-2-2026-11-23T09:00:00.000Z",
       "sessionName": "Bathing",
       "startsAt": "2026-11-23T09:00:00.000Z",
@@ -111332,7 +111349,7 @@
       "endsAt": "2026-11-27T04:00:00.000Z",
       "durationMinutes": 120,
       "capacity": 16,
-      "ticketsSold": 8,
+      "ticketsSold": 10,
       "fixedTicketPrice": 80,
       "location": "Byron Bay",
       "inPerson": true,
@@ -111396,7 +111413,7 @@
       "endsAt": "2026-11-27T05:00:00.000Z",
       "durationMinutes": 60,
       "capacity": 32,
-      "ticketsSold": 1,
+      "ticketsSold": 3,
       "fixedTicketPrice": 0,
       "location": "Prahran",
       "inPerson": true,
@@ -111855,22 +111872,6 @@
       "soldSource": "unknown",
       "measure": "seats",
       "confidence": "low"
-    },
-    {
-      "id": "navia-2-2026-11-29T08:00:00.000Z",
-      "sessionName": "Bathing",
-      "startsAt": "2026-11-29T08:00:00.000Z",
-      "endsAt": "2026-11-29T09:00:00.000Z",
-      "durationMinutes": 60,
-      "capacity": 32,
-      "ticketsSold": 6,
-      "fixedTicketPrice": 0,
-      "location": "Prahran",
-      "inPerson": true,
-      "capacitySource": "derived-grid",
-      "soldSource": "derived-grid",
-      "measure": "seats",
-      "confidence": "medium"
     },
     {
       "id": "navia-2-2026-11-29T09:00:00.000Z",
